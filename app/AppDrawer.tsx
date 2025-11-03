@@ -13,9 +13,14 @@ export default function AppDrawer() {
   return (
     <Drawer.Navigator
       initialRouteName="Dashboard"
+      screenOptions={{
+        headerStyle: { backgroundColor: 'rgb(144, 238, 144)' },
+        headerTintColor: '#fff',
+        headerShadowVisible: false,
+      }}
       drawerContent={props => <CustomDrawerContent {...props} />}
     >
-      <Drawer.Screen name="Dashboard" component={DashboardScreen} />
+      <Drawer.Screen name="Dashboard" component={DashboardScreen} options={{ headerTitle: '' }} />
       <Drawer.Screen name="Transactions" component={TransactionsScreen} />
       <Drawer.Screen name="Milk Order" component={MilkOrderScreen} />
       <Drawer.Screen name="Payment" component={PaymentScreen} />

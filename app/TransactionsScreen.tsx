@@ -45,12 +45,12 @@ export default function TransactionsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f6f7fb', padding: 16 },
+  container: { flex: 1, backgroundColor: '#fff', padding: 16 },
   amountDue: { color: '#e53935', fontWeight: 'bold', fontSize: 22, textAlign: 'center', marginBottom: 16 },
-  row: { flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#fff', borderRadius: 8, padding: 10, marginBottom: 6 },
+  row: { flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#fff', borderRadius: 8, padding: 10, marginBottom: 6, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
   cell: { flex: 1, textAlign: 'center', fontSize: 16 },
   headerRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 },
   headerCell: { flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14 },
   footerRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 },
-  footerCell: { flex: 1, textAlign: 'center', fontWeight: 'bold', color: '#888' },
+  footerCell: { flex: 1, textAlign: 'center', fontWeight: 'bold', color: 'rgb(144, 238, 144)' },
 });

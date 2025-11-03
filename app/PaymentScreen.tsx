@@ -24,7 +24,9 @@ export default function PaymentScreen() {
             <Text style={styles.cell}>{'\u20B9'}{item.paid}</Text>
             <Text style={[styles.cell, {color: item.due > 0 ? '#e53935' : '#4caf50'}]}>{'\u20B9'}{item.due}</Text>
             {item.due > 0 && (
-              <TouchableOpacity style={styles.payBtn}><Text style={{color:'#fff'}}>PAY DUE</Text></TouchableOpacity>
+              <TouchableOpacity style={[styles.payBtn, {backgroundColor: 'rgb(144, 238, 144)'}]}>
+                <Text style={{color:'#fff'}}>PAY DUE</Text>
+              </TouchableOpacity>
             )}
           </View>
         )}
@@ -43,10 +45,10 @@ export default function PaymentScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f6f7fb', padding: 16 },
-  row: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', borderRadius: 8, padding: 10, marginBottom: 6 },
+  container: { flex: 1, backgroundColor: '#fff', padding: 16 },
+  row: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', borderRadius: 8, padding: 10, marginBottom: 6, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
   cell: { flex: 1, textAlign: 'center', fontSize: 15 },
   headerRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
   headerCell: { flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 13 },
-  payBtn: { backgroundColor: '#2d8cff', borderRadius: 8, paddingVertical: 8, paddingHorizontal: 14, marginLeft: 6 },
+  payBtn: { backgroundColor: 'rgb(144, 238, 144)', borderRadius: 8, paddingVertical: 8, paddingHorizontal: 14, marginLeft: 6 },
 });
