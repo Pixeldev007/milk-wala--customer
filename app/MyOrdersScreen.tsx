@@ -40,15 +40,19 @@ export default function MyOrdersScreen() {
         p_to: null,
       });
       if (error) throw error;
-      setRows((data ?? []).map((r: any) => ({
-        date: r.date,
-        shift: r.shift,
-        liters: Number(r.liters ?? 0),
-        delivered: !!r.delivered,
-        delivered_at: r.delivered_at ?? null,
-        delivery_agent_name: r.delivery_agent_name ?? null,
-        delivery_agent_phone: r.delivery_agent_phone ?? null,
-      })));
+      setRows((data ?? []).map((r: any) => {
+        const rawShift = (r.shift ?? '').toString().toLowerCase();
+        const normalizedShift: 'morning' | 'evening' = rawShift.includes('even') || rawShift.includes('pm') ? 'evening' : 'morning';
+        return {
+          date: r.date,
+          shift: normalizedShift,
+          liters: Number(r.liters ?? 0),
+          delivered: !!r.delivered,
+          delivered_at: r.delivered_at ?? null,
+          delivery_agent_name: r.delivery_agent_name ?? null,
+          delivery_agent_phone: r.delivery_agent_phone ?? null,
+        };
+      }));
     } finally {
       setLoading(false);
     }
