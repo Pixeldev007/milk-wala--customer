@@ -4,7 +4,7 @@ import { getCustomerSession } from '@/lib/session';
 import { supabase } from '@/lib/supabase';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import React, { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, BackHandler, FlatList, Text, View } from 'react-native';
+import { ActivityIndicator, BackHandler, FlatList, Text, View, StyleSheet } from 'react-native';
 
 type OrderRow = {
   date: string;
@@ -68,21 +68,40 @@ export default function MyOrdersScreen() {
     }, [navigation])
   );
 
-  if (loading && rows.length === 0) return <ActivityIndicator />;
+  if (loading && rows.length === 0) return (
+    <View style={{ flex: 1, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center' }}>
+      <ActivityIndicator />
+    </View>
+  );
 
   return (
-    <FlatList
-      data={rows}
-      keyExtractor={(item, idx) => `${item.date}-${item.shift}-${idx}`}
-      renderItem={({ item }) => (
-        <View style={{ padding: 12, borderBottomWidth: 1, borderColor: '#eee', backgroundColor: '#fff' }}>
-          <Text style={{ fontWeight: '700', color: '#1b5e20' }}>{item.date} • {item.shift === 'morning' ? 'Morning' : 'Evening'}</Text>
-          <Text style={{ color: '#1b5e20' }}>{item.liters.toFixed(1)} L • {item.delivered ? 'Delivered' : 'Pending'}</Text>
-          {item.delivered_at ? <Text style={{ color: '#4f4f4f' }}>Delivered at {new Date(item.delivered_at).toLocaleString()}</Text> : null}
-          {item.delivery_agent_name ? <Text style={{ color: '#4f4f4f' }}>Agent: {item.delivery_agent_name} ({item.delivery_agent_phone})</Text> : null}
-        </View>
-      )}
-      ListEmptyComponent={() => <Text style={{ padding: 16, color: '#666' }}>No orders in the recent period</Text>}
-    />
+    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+      <FlatList
+        style={{ backgroundColor: '#ffffff' }}
+        contentContainerStyle={{ backgroundColor: '#ffffff', padding: 12 }}
+        data={rows}
+        keyExtractor={(item, idx) => `${item.date}-${item.shift}-${idx}`}
+        renderItem={({ item }) => (
+          <View style={styles.orderBox}>
+            <Text style={{ fontWeight: '700', color: '#1b5e20' }}>{item.date} • {item.shift === 'morning' ? 'Morning' : 'Evening'}</Text>
+            <Text style={{ color: '#1b5e20' }}>{item.liters.toFixed(1)} L • {item.delivered ? 'Delivered' : 'Pending'}</Text>
+            {item.delivered_at ? <Text style={{ color: '#4f4f4f' }}>Delivered at {new Date(item.delivered_at).toLocaleString()}</Text> : null}
+            {item.delivery_agent_name ? <Text style={{ color: '#4f4f4f' }}>Agent: {item.delivery_agent_name} ({item.delivery_agent_phone})</Text> : null}
+          </View>
+        )}
+        ListEmptyComponent={() => <Text style={{ padding: 16, color: '#666' }}>No orders in the recent period</Text>}
+      />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  orderBox: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: 'rgb(144, 238, 144)'
+  }
+});
