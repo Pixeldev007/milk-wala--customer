@@ -81,22 +81,20 @@ export default function Login() {
         <TouchableOpacity style={styles.signInBtn} onPress={onSignIn} disabled={loading}>
           <Text style={styles.signInText}>{loading ? 'Signing In...' : 'Sign In'}</Text>
         </TouchableOpacity>
-
-        <Text style={styles.footerText}>New to Milk-Karan-Customer? <Text style={styles.footerLink}>Create an account</Text></Text>
       </View>
     </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#e8f5e9', alignItems: 'center', justifyContent: 'center', padding: 16 },
-  card: { width: '90%', backgroundColor: '#fff', borderRadius: 16, padding: 16, borderWidth: 1, borderColor: '#c8e6c9', shadowColor: '#000', shadowOpacity: 0.08, shadowOffset: { width: 0, height: 4 }, shadowRadius: 12, elevation: 4 },
-  title: { fontSize: 22, fontWeight: '800', color: '#1b5e20', marginBottom: 6 },
+  container: { flex: 1, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center', padding: 16 },
+  card: { width: '90%', backgroundColor: '#ffffff', borderRadius: 16, padding: 16, borderWidth: 1, borderColor: '#bebebe', shadowColor: '#000', shadowOpacity: 0.08, shadowOffset: { width: 0, height: 4 }, shadowRadius: 12, elevation: 4 },
+  title: { fontSize: 22, fontWeight: '800', color: '#01559d', marginBottom: 6 },
   subtitle: { color: '#6b7280', marginBottom: 14 },
-  label: { color: '#1b5e20', fontWeight: '700', marginBottom: 6 },
-  input: { borderWidth: 1, borderColor: '#c8e6c9', borderRadius: 12, paddingVertical: 12, paddingHorizontal: 14, backgroundColor: '#f9fff9', color: '#1b5e20' },
-  signInBtn: { backgroundColor: 'rgb(144, 238, 144)', borderRadius: 12, paddingVertical: 14, alignItems: 'center', marginTop: 16 },
+  label: { color: '#01559d', fontWeight: '700', marginBottom: 6 },
+  input: { borderWidth: 1, borderColor: '#bebebe', borderRadius: 12, paddingVertical: 12, paddingHorizontal: 14, backgroundColor: '#ffffff', color: '#01559d' },
+  signInBtn: { backgroundColor: '#01559d', borderRadius: 12, paddingVertical: 14, alignItems: 'center', marginTop: 16 },
   signInText: { color: '#fff', fontWeight: '800' },
-  footerText: { textAlign: 'center', marginTop: 12, color: '#1b5e20' },
-  footerLink: { fontWeight: '800', color: '#1b5e20' },
+  footerText: { textAlign: 'center', marginTop: 12, color: '#01559d' },
+  footerLink: { fontWeight: '800', color: '#01559d' },
 });

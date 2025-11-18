@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
+import { useMemo } from 'react';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function PaymentScreen() {
   // Dummy data for UI only
@@ -75,7 +75,7 @@ export default function PaymentScreen() {
           </View>
           <View style={styles.todayBox}>
             <Text style={styles.todayLabel}>Due</Text>
-            <Text style={[styles.todayValue, {color: totalDue > 0 ? '#e53935' : '#4caf50'}]}>{'\u20B9'}{totalDue}</Text>
+            <Text style={[styles.todayValue, {color: totalDue > 0 ? '#e53935' : '#01559d'}]}>{'\u20B9'}{totalDue}</Text>
           </View>
         </View>
       </View>
@@ -96,9 +96,9 @@ export default function PaymentScreen() {
             ))}
             <View style={styles.monthRow}><Text style={styles.monthCell}>Total</Text><Text style={styles.monthCellVal}>{'\u20B9'}{item.total.toFixed(0)}</Text></View>
             <View style={styles.monthRow}><Text style={styles.monthCell}>Paid</Text><Text style={styles.monthCellVal}>{'\u20B9'}{item.paid.toFixed(0)}</Text></View>
-            <View style={styles.monthRow}><Text style={styles.monthCell}>Due</Text><Text style={[styles.monthCellVal, {color: item.due > 0 ? '#e53935' : '#4caf50'}]}>{'\u20B9'}{item.due.toFixed(0)}</Text></View>
+            <View style={styles.monthRow}><Text style={styles.monthCell}>Due</Text><Text style={[styles.monthCellVal, {color: item.due > 0 ? '#e53935' : '#01559d'}]}>{'\u20B9'}{item.due.toFixed(0)}</Text></View>
             {item.due > 0 && (
-              <TouchableOpacity style={[styles.payBtn, {backgroundColor: 'rgb(144, 238, 144)'}]}>
+              <TouchableOpacity style={[styles.payBtn, {backgroundColor: '#01559d'}]}>
                 <Text style={{color:'#fff'}}>PAY DUE</Text>
               </TouchableOpacity>
             )}
@@ -133,9 +133,9 @@ export default function PaymentScreen() {
                 ))}
                 <View style={styles.monthRow}><Text style={styles.monthCell}>Total</Text><Text style={styles.monthCellVal}>{'\u20B9'}{item.total.toFixed(0)}</Text></View>
                 <View style={styles.monthRow}><Text style={styles.monthCell}>Paid</Text><Text style={styles.monthCellVal}>{'\u20B9'}{item.paid.toFixed(0)}</Text></View>
-                <View style={styles.monthRow}><Text style={styles.monthCell}>Due</Text><Text style={[styles.monthCellVal, {color: item.due > 0 ? '#e53935' : '#4caf50'}]}>{'\u20B9'}{item.due.toFixed(0)}</Text></View>
+                <View style={styles.monthRow}><Text style={styles.monthCell}>Due</Text><Text style={[styles.monthCellVal, {color: item.due > 0 ? '#e53935' : '#01559d'}]}>{'\u20B9'}{item.due.toFixed(0)}</Text></View>
                 {item.due > 0 && (
-                  <TouchableOpacity style={[styles.payBtn, {backgroundColor: 'rgb(144, 238, 144)'}]}>
+                  <TouchableOpacity style={[styles.payBtn, {backgroundColor: '#01559d'}]}>
                     <Text style={{color:'#fff'}}>PAY DUE</Text>
                   </TouchableOpacity>
                 )}
@@ -149,25 +149,25 @@ export default function PaymentScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', padding: 16 },
-  todayCard: { backgroundColor: '#fff', borderRadius: 12, padding: 12, marginBottom: 12, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
-  todayDate: { fontSize: 16, fontWeight: '700', color: '#1b5e20', marginBottom: 8 },
+  container: { flex: 1, backgroundColor: '#ffffff', padding: 16 },
+  todayCard: { backgroundColor: '#ffffff', borderRadius: 12, padding: 12, marginBottom: 12, borderWidth: 1, borderColor: '#bebebe' },
+  todayDate: { fontSize: 16, fontWeight: '700', color: '#01559d', marginBottom: 8 },
   todayRow: { flexDirection: 'row', gap: 10 },
-  todayBox: { flex: 1, backgroundColor: '#e8f5e9', borderWidth: 1, borderColor: '#c8e6c9', borderRadius: 10, padding: 10, alignItems: 'center' },
+  todayBox: { flex: 1, backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#bebebe', borderRadius: 10, padding: 10, alignItems: 'center' },
   todayLabel: { color: '#4f4f4f', fontSize: 12 },
-  todayValue: { color: '#1b5e20', fontWeight: '700', fontSize: 16 },
-  sectionTitle: { fontSize: 16, fontWeight: '700', color: '#1b5e20', marginBottom: 6 },
-  monthBox: { backgroundColor: '#fff', borderRadius: 10, padding: 12, marginBottom: 8, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
-  monthTitle: { fontWeight: '700', color: '#1b5e20', marginBottom: 8 },
+  todayValue: { color: '#01559d', fontWeight: '700', fontSize: 16 },
+  sectionTitle: { fontSize: 16, fontWeight: '700', color: '#01559d', marginBottom: 6 },
+  monthBox: { backgroundColor: '#ffffff', borderRadius: 10, padding: 12, marginBottom: 8, borderWidth: 1, borderColor: '#bebebe' },
+  monthTitle: { fontWeight: '700', color: '#01559d', marginBottom: 8 },
   monthRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 4 },
   monthCell: { color: '#4f4f4f' },
-  monthCellVal: { color: '#1b5e20', fontWeight: '700' },
-  row: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', borderRadius: 8, padding: 10, marginBottom: 6, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
+  monthCellVal: { color: '#01559d', fontWeight: '700' },
+  row: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#ffffff', borderRadius: 8, padding: 10, marginBottom: 6, borderWidth: 1, borderColor: '#bebebe' },
   cell: { flex: 1, textAlign: 'center', fontSize: 15 },
-  payBtn: { backgroundColor: 'rgb(144, 238, 144)', borderRadius: 8, paddingVertical: 8, paddingHorizontal: 14, marginLeft: 6 },
-  summary: { marginTop: 8, backgroundColor: '#e8f5e9', borderColor: '#c8e6c9', borderWidth: 1, borderRadius: 10, padding: 10, gap: 4 },
-  summaryText: { color: '#1b5e20', fontWeight: '700' },
+  payBtn: { backgroundColor: '#01559d', borderRadius: 8, paddingVertical: 8, paddingHorizontal: 14, marginLeft: 6 },
+  summary: { marginTop: 8, backgroundColor: '#ffffff', borderColor: '#bebebe', borderWidth: 1, borderRadius: 10, padding: 10, gap: 4 },
+  summaryText: { color: '#01559d', fontWeight: '700' },
   yearHeader: { flexDirection: 'row', justifyContent:'space-between', alignItems:'center', marginBottom: 6 },
-  yearHeaderText: { fontWeight: '700', color: '#1b5e20', fontSize: 15 },
-  yearHeaderTextSmall: { color: '#1b5e20' },
+  yearHeaderText: { fontWeight: '700', color: '#01559d', fontSize: 15 },
+  yearHeaderTextSmall: { color: '#01559d' },
 });

@@ -1,11 +1,10 @@
-import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import CustomDrawerContent from './CustomDrawerContent';
 import DashboardScreen from './DashboardScreen';
-import TransactionsScreen from './TransactionsScreen';
+import MyOrdersScreen from './MyOrdersScreen';
 import PaymentScreen from './PaymentScreen';
 import SettingsScreen from './SettingsScreen';
-import CustomDrawerContent from './CustomDrawerContent';
-import MyOrdersScreen from './MyOrdersScreen';
+import TransactionsScreen from './TransactionsScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -14,7 +13,7 @@ export default function AppDrawer() {
     <Drawer.Navigator
       initialRouteName="Dashboard"
       screenOptions={{
-        headerStyle: { backgroundColor: 'rgb(144, 238, 144)' },
+        headerStyle: { backgroundColor: '#01559d' },
         headerTintColor: '#fff',
         headerShadowVisible: false,
       }}

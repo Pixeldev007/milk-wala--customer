@@ -1,5 +1,4 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function SettingsScreen() {
   return (
@@ -25,8 +24,8 @@ export default function SettingsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', padding: 16 },
-  item: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', borderRadius: 10, padding: 18, marginBottom: 14, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
+  container: { flex: 1, backgroundColor: '#ffffff', padding: 16 },
+  item: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#ffffff', borderRadius: 10, padding: 18, marginBottom: 14, borderWidth: 1, borderColor: '#bebebe' },
   icon: { fontSize: 20, marginRight: 16 },
   text: { fontSize: 16, fontWeight: 'bold' },
 });

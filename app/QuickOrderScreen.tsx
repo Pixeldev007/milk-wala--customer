@@ -1,6 +1,6 @@
-import React, { useMemo, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
-import { getProducts, getToday, setOverride, Product } from '@/services/localData';
+import { getProducts, getToday, Product, setOverride } from '@/services/localData';
+import { useMemo, useState } from 'react';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function QuickOrderScreen() {
   const [slotAM, setSlotAM] = useState(true);
@@ -92,23 +92,23 @@ export default function QuickOrderScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', padding: 16 },
-  title: { fontSize: 20, fontWeight: '700', color: '#2e7d32', marginBottom: 12 },
+  container: { flex: 1, backgroundColor: '#ffffff', padding: 16 },
+  title: { fontSize: 20, fontWeight: '700', color: '#01559d', marginBottom: 12 },
   slotRow: { flexDirection: 'row', gap: 8, marginBottom: 10 },
-  slotBtn: { flex: 1, alignItems: 'center', paddingVertical: 10, borderRadius: 10, borderWidth: 1, borderColor: '#c8e6c9' },
-  slotActive: { backgroundColor: 'rgb(144, 238, 144)', borderColor: 'rgb(144, 238, 144)' },
-  slotText: { color: '#1b5e20', fontWeight: '700' },
+  slotBtn: { flex: 1, alignItems: 'center', paddingVertical: 10, borderRadius: 10, borderWidth: 1, borderColor: '#bebebe' },
+  slotActive: { backgroundColor: '#01559d', borderColor: '#01559d' },
+  slotText: { color: '#01559d', fontWeight: '700' },
   slotActiveText: { color: '#fff' },
-  card: { backgroundColor: '#fff', borderWidth: 1, borderColor: 'rgb(144, 238, 144)', borderRadius: 12, padding: 12, marginBottom: 10 },
-  productName: { fontWeight: '700', marginBottom: 8, color: '#1b5e20' },
+  card: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#bebebe', borderRadius: 12, padding: 12, marginBottom: 10 },
+  productName: { fontWeight: '700', marginBottom: 8, color: '#01559d' },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 },
   label: { color: '#4f4f4f' },
   stepperRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  stepperBtn: { width: 36, height: 36, borderRadius: 8, backgroundColor: 'rgb(144, 238, 144)', alignItems: 'center', justifyContent: 'center' },
+  stepperBtn: { width: 36, height: 36, borderRadius: 8, backgroundColor: '#01559d', alignItems: 'center', justifyContent: 'center' },
   stepperText: { color: '#fff', fontSize: 18, fontWeight: '700' },
-  qtyVal: { minWidth: 48, textAlign: 'center', color: '#1b5e20', fontWeight: '700' },
+  qtyVal: { minWidth: 48, textAlign: 'center', color: '#01559d', fontWeight: '700' },
   footer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  summary: { color: '#1b5e20', fontWeight: '700' },
-  placeBtn: { backgroundColor: '#2e7d32', borderRadius: 12, paddingVertical: 12, paddingHorizontal: 16 },
+  summary: { color: '#01559d', fontWeight: '700' },
+  placeBtn: { backgroundColor: '#01559d', borderRadius: 12, paddingVertical: 12, paddingHorizontal: 16 },
   placeText: { color: '#fff', fontWeight: '700' },
 });

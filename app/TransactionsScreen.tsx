@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, ScrollView } from 'react-native';
+import { useMemo, useState } from 'react';
+import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function TransactionsScreen() {
   // Dummy data for UI only
@@ -158,25 +158,25 @@ export default function TransactionsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', padding: 16 },
-  todayCard: { backgroundColor: '#fff', borderRadius: 12, padding: 12, marginBottom: 12, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
-  todayDate: { fontSize: 16, fontWeight: '700', color: '#1b5e20', marginBottom: 8 },
+  container: { flex: 1, backgroundColor: '#ffffff', padding: 16 },
+  todayCard: { backgroundColor: '#ffffff', borderRadius: 12, padding: 12, marginBottom: 12, borderWidth: 1, borderColor: '#bebebe' },
+  todayDate: { fontSize: 16, fontWeight: '700', color: '#01559d', marginBottom: 8 },
   todayRow: { flexDirection: 'row', gap: 10 },
-  todayBox: { flex: 1, backgroundColor: '#e8f5e9', borderWidth: 1, borderColor: '#c8e6c9', borderRadius: 10, padding: 10, alignItems: 'center' },
+  todayBox: { flex: 1, backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#bebebe', borderRadius: 10, padding: 10, alignItems: 'center' },
   todayLabel: { color: '#4f4f4f', fontSize: 12 },
-  todayValue: { color: '#1b5e20', fontWeight: '700', fontSize: 16 },
-  sectionTitle: { fontWeight: '700', color: '#1b5e20', marginBottom: 6, fontSize: 16 },
+  todayValue: { color: '#01559d', fontWeight: '700', fontSize: 16 },
+  sectionTitle: { fontWeight: '700', color: '#01559d', marginBottom: 6, fontSize: 16 },
   filterRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 },
-  filterBtn: { flex: 1, alignItems: 'center', paddingVertical: 8, marginHorizontal: 4, borderWidth: 1, borderColor: '#c8e6c9', borderRadius: 20 },
-  filterActive: { backgroundColor: 'rgb(144, 238, 144)', borderColor: 'rgb(144, 238, 144)' },
-  filterText: { color: '#1b5e20', fontWeight: '600' },
+  filterBtn: { flex: 1, alignItems: 'center', paddingVertical: 8, marginHorizontal: 4, borderWidth: 1, borderColor: '#bebebe', borderRadius: 20 },
+  filterActive: { backgroundColor: '#01559d', borderColor: '#01559d' },
+  filterText: { color: '#01559d', fontWeight: '600' },
   filterActiveText: { color: '#fff' },
-  monthBox: { backgroundColor: '#fff', borderRadius: 10, padding: 12, marginBottom: 8, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
-  monthTitle: { fontWeight: '700', color: '#1b5e20', marginBottom: 8 },
+  monthBox: { backgroundColor: '#ffffff', borderRadius: 10, padding: 12, marginBottom: 8, borderWidth: 1, borderColor: '#bebebe' },
+  monthTitle: { fontWeight: '700', color: '#01559d', marginBottom: 8 },
   monthRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 4 },
   monthCell: { color: '#4f4f4f' },
-  monthCellVal: { color: '#1b5e20', fontWeight: '700' },
+  monthCellVal: { color: '#01559d', fontWeight: '700' },
   yearHeader: { flexDirection: 'row', justifyContent:'space-between', alignItems:'center', marginBottom: 6 },
-  yearHeaderText: { fontWeight: '700', color: '#1b5e20', fontSize: 15 },
-  yearHeaderTextSmall: { color: '#1b5e20' },
+  yearHeaderText: { fontWeight: '700', color: '#01559d', fontSize: 15 },
+  yearHeaderTextSmall: { color: '#01559d' },
 });

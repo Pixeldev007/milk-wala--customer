@@ -3,8 +3,8 @@ import { listCustomerDeliveries } from '@/lib/dailyDeliveries';
 import { getCustomerSession } from '@/lib/session';
 import { supabase } from '@/lib/supabase';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import React, { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, BackHandler, FlatList, Text, View, StyleSheet } from 'react-native';
+import { useCallback, useEffect, useState } from 'react';
+import { ActivityIndicator, BackHandler, FlatList, StyleSheet, Text, View } from 'react-native';
 
 type OrderRow = {
   date: string;
@@ -83,8 +83,8 @@ export default function MyOrdersScreen() {
         keyExtractor={(item, idx) => `${item.date}-${item.shift}-${idx}`}
         renderItem={({ item }) => (
           <View style={styles.orderBox}>
-            <Text style={{ fontWeight: '700', color: '#1b5e20' }}>{item.date} • {item.shift === 'morning' ? 'Morning' : 'Evening'}</Text>
-            <Text style={{ color: '#1b5e20' }}>{item.liters.toFixed(1)} L • {item.delivered ? 'Delivered' : 'Pending'}</Text>
+            <Text style={{ fontWeight: '700', color: '#01559d' }}>{item.date} • {item.shift === 'morning' ? 'Morning' : 'Evening'}</Text>
+            <Text style={{ color: '#01559d' }}>{item.liters.toFixed(1)} L • {item.delivered ? 'Delivered' : 'Pending'}</Text>
             {item.delivered_at ? <Text style={{ color: '#4f4f4f' }}>Delivered at {new Date(item.delivered_at).toLocaleString()}</Text> : null}
             {item.delivery_agent_name ? <Text style={{ color: '#4f4f4f' }}>Agent: {item.delivery_agent_name} ({item.delivery_agent_phone})</Text> : null}
           </View>
@@ -97,11 +97,11 @@ export default function MyOrdersScreen() {
 
 const styles = StyleSheet.create({
   orderBox: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     borderRadius: 10,
     padding: 12,
     marginBottom: 8,
     borderWidth: 1,
-    borderColor: 'rgb(144, 238, 144)'
+    borderColor: '#bebebe'
   }
 });

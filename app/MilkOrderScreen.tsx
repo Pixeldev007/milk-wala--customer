@@ -1,5 +1,4 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function MilkOrderScreen() {
   return (
@@ -31,16 +30,16 @@ export default function MilkOrderScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', padding: 16 },
+  container: { flex: 1, backgroundColor: '#ffffff', padding: 16 },
   dateRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 },
-  dateBtn: { backgroundColor: '#fff', color: '#222', borderColor: 'rgb(144, 238, 144)', borderWidth: 1, padding: 8, borderRadius: 6, fontWeight: 'bold', minWidth: 60, textAlign: 'center' },
+  dateBtn: { backgroundColor: '#ffffff', color: '#222', borderColor: '#bebebe', borderWidth: 1, padding: 8, borderRadius: 6, fontWeight: 'bold', minWidth: 60, textAlign: 'center' },
   selectedDate: { fontWeight: 'bold', fontSize: 16, marginBottom: 8 },
   infoText: { color: '#888', fontSize: 13, marginBottom: 12 },
-  productRow: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', borderRadius: 10, padding: 12, marginBottom: 12, borderWidth: 1, borderColor: 'rgb(144, 238, 144)' },
+  productRow: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#ffffff', borderRadius: 10, padding: 12, marginBottom: 12, borderWidth: 1, borderColor: '#bebebe' },
   productName: { flex: 2, fontWeight: 'bold' },
   qtyBox: { flex: 1, alignItems: 'center' },
   qtyLabel: { color: '#888', fontSize: 12 },
   qtyValue: { fontWeight: 'bold', fontSize: 18 },
-  placeOrderBtn: { backgroundColor: 'rgb(144, 238, 144)', borderRadius: 8, padding: 14, alignItems: 'center', marginBottom: 10 },
+  placeOrderBtn: { backgroundColor: '#01559d', borderRadius: 8, padding: 14, alignItems: 'center', marginBottom: 10 },
   noDeliveryBtn: { backgroundColor: '#ffb300', borderRadius: 8, padding: 14, alignItems: 'center' },
 });

@@ -144,6 +144,10 @@ export default function DashboardScreen() {
 
   return (
     <View style={styles.screen}>
+      <View style={styles.appHeader}>
+        <Text style={styles.appTitle}>Milk Karan</Text>
+      </View>
+
       <ScrollView
         style={styles.scroll}
         contentContainerStyle={styles.scrollContent}
@@ -153,12 +157,7 @@ export default function DashboardScreen() {
           setRefreshing(false);
         }} />}
       >
-        <View style={styles.headerCard}>
-          <View style={styles.headerTopRow}>
-            <Text style={styles.menuIcon}>☰</Text>
-            <Text style={styles.appTitle}>Milk-Karan-Customer</Text>
-            <View style={{ width: 24 }} />
-          </View>
+        <View style={styles.calendarCard}>
           <View style={styles.calendarRow}>
             {calendarDays.map((item) => (
               <View key={item.key} style={[styles.calendarCell, item.isToday && styles.calendarCellActive]}>
@@ -167,7 +166,22 @@ export default function DashboardScreen() {
               </View>
             ))}
           </View>
-          <Text style={styles.headerDate}>{today.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })}</Text>
+          <View style={styles.calendarDivider} />
+          <View style={styles.calendarFooterRow}>
+            <Text style={styles.headerDate}>{today.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })}</Text>
+            <Text style={styles.headerDateIcon}>⌄</Text>
+          </View>
+        </View>
+
+        <View style={styles.summaryRow}>
+          <View style={styles.summaryCard}>
+            <Text style={styles.summaryValue}>{Number(morning?.liters ?? 0).toFixed(0)}</Text>
+            <Text style={styles.summaryLabel}>Morning</Text>
+          </View>
+          <View style={styles.summaryCardActive}>
+            <Text style={styles.summaryValue}>{(Number(morning?.liters ?? 0) + Number(evening?.liters ?? 0)).toFixed(2)}</Text>
+            <Text style={styles.summaryLabel}>L</Text>
+          </View>
         </View>
 
         <View style={styles.card}>
@@ -241,36 +255,45 @@ function MenuTile({ label, icon, onPress }: { label: string; icon: string; onPre
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: '#e8f5e9' },
-  scroll: { flex: 1 },
-  scrollContent: { padding: 16, gap: 16 },
-  headerCard: { backgroundColor: '#90ee90', borderRadius: 16, paddingVertical: 18, paddingHorizontal: 16, shadowColor: '#000', shadowOpacity: 0.1, shadowOffset: { width: 0, height: 4 }, shadowRadius: 8, elevation: 3 },
+  screen: { flex: 1, backgroundColor: '#ffffff' },
+  appHeader: { height: 40, backgroundColor: '#01559d', paddingHorizontal: 16, paddingTop: 12, justifyContent: 'center', shadowColor: '#000', shadowOpacity: 0.15, shadowOffset: { width: 0, height: 2 }, shadowRadius: 6, elevation: 4 },
   headerTopRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  menuIcon: { fontSize: 20, color: '#fff', fontWeight: '700' },
-  appTitle: { color: '#fff', fontSize: 18, fontWeight: '700' },
-  calendarRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 },
-  calendarCell: { alignItems: 'center', padding: 8, borderRadius: 12, backgroundColor: 'rgba(255,255,255,0.25)', flex: 1, marginHorizontal: 4 },
-  calendarCellActive: { backgroundColor: '#fff' },
-  calendarDay: { color: '#f2fef2', fontWeight: '600', fontSize: 11 },
-  calendarDayActive: { color: '#90ee90' },
-  calendarDate: { marginTop: 4, color: '#f2fef2', fontWeight: '700', fontSize: 16 },
-  calendarDateActive: { color: '#90ee90' },
-  headerDate: { marginTop: 16, color: '#fff', fontWeight: '700', textAlign: 'center' },
-  card: { backgroundColor: '#fff', borderRadius: 16, padding: 16, shadowColor: '#000', shadowOpacity: 0.05, shadowOffset: { width: 0, height: 4 }, shadowRadius: 8, elevation: 2 },
-  cardTitle: { fontWeight: '700', fontSize: 16, color: '#90ee90', marginBottom: 4 },
-  cardValue: { fontSize: 15, fontWeight: '600', color: '#90ee90' },
+  menuIcon: { fontSize: 22, color: '#ffffff', fontWeight: '700' },
+  appTitle: { color: '#ffffff', fontSize: 20, fontWeight: '700' },
+  scroll: { flex: 1 },
+  scrollContent: { paddingHorizontal: 16, paddingTop: 16, paddingBottom: 24, gap: 16 },
+  calendarCard: { backgroundColor: '#ffffff', borderRadius: 16, paddingVertical: 12, paddingHorizontal: 12, borderWidth: 1, borderColor: '#e5e7eb', shadowColor: '#000', shadowOpacity: 0.04, shadowOffset: { width: 0, height: 2 }, shadowRadius: 6, elevation: 2 },
+  calendarRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
+  calendarCell: { alignItems: 'center', paddingVertical: 6, paddingHorizontal: 4, borderRadius: 10, flex: 1, marginHorizontal: 2 },
+  calendarCellActive: { backgroundColor: '#01559d' },
+  calendarDay: { color: '#4b5563', fontWeight: '600', fontSize: 11 },
+  calendarDayActive: { color: '#ffffff' },
+  calendarDate: { marginTop: 4, color: '#4b5563', fontWeight: '700', fontSize: 15 },
+  calendarDateActive: { color: '#ffffff' },
+  calendarDivider: { height: 1, backgroundColor: '#e5e7eb', marginTop: 4, marginBottom: 8 },
+  calendarFooterRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  headerDate: { color: '#374151', fontWeight: '600', fontSize: 14 },
+  headerDateIcon: { color: '#6b7280', fontSize: 16 },
+  summaryRow: { flexDirection: 'row', justifyContent: 'space-between', gap: 8 },
+  summaryCard: { flex: 1, borderRadius: 10, borderWidth: 1, borderColor: '#bebebe', paddingVertical: 12, alignItems: 'center', backgroundColor: '#ffffff' },
+  summaryCardActive: { flex: 1, borderRadius: 10, borderWidth: 1, borderColor: '#01559d', paddingVertical: 12, alignItems: 'center', backgroundColor: '#ffffff' },
+  summaryValue: { fontSize: 18, fontWeight: '700', color: '#01559d' },
+  summaryLabel: { marginTop: 4, fontSize: 12, color: '#6b7280' },
+  card: { backgroundColor: '#ffffff', borderRadius: 16, padding: 16, shadowColor: '#000', shadowOpacity: 0.04, shadowOffset: { width: 0, height: 2 }, shadowRadius: 6, elevation: 2, borderWidth: 1, borderColor: '#e5e7eb' },
+  cardTitle: { fontWeight: '700', fontSize: 16, color: '#01559d', marginBottom: 4 },
+  cardValue: { fontSize: 15, fontWeight: '600', color: '#01559d' },
   cardSub: { color: '#4f4f4f', marginTop: 2 },
   shiftRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 12 },
-  shiftLabel: { fontWeight: '600', color: '#1b5e20' },
-  shiftDetail: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  shiftValue: { fontWeight: '700', color: '#1b5e20' },
+  shiftLabel: { fontWeight: '600', color: '#01559d' },
+  shiftDetail: { flexDirection: 'row', alignItems: 'center', columnGap: 8 },
+  shiftValue: { fontWeight: '700', color: '#01559d' },
   shiftStatus: { fontWeight: '600' },
-  shiftStatusDone: { color: '#2e7d32' },
-  shiftStatusPending: { color: '#a1a1a1' },
+  shiftStatusDone: { color: '#01559d' },
+  shiftStatusPending: { color: '#bebebe' },
   shiftMeta: { color: '#4f4f4f', marginTop: 4 },
-  tileGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12, justifyContent: 'space-between' },
-  tile: { backgroundColor: '#fff', borderRadius: 16, paddingVertical: 18, alignItems: 'center', justifyContent: 'center', flexBasis: '30%', flexGrow: 1, borderWidth: 1, borderColor: '#c8e6c9', shadowColor: '#000', shadowOpacity: 0.04, shadowOffset: { width: 0, height: 2 }, shadowRadius: 4, elevation: 1 },
-  tileIconCircle: { width: 48, height: 48, borderRadius: 24, backgroundColor: '#90ee90', alignItems: 'center', justifyContent: 'center', marginBottom: 8 },
-  tileIcon: { fontSize: 22, color: '#fff' },
-  tileLabel: { fontWeight: '700', color: '#1b5e20' },
+  tileGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', rowGap: 16, columnGap: 12, marginTop: 4 },
+  tile: { backgroundColor: '#ffffff', borderRadius: 16, paddingVertical: 20, alignItems: 'center', justifyContent: 'center', flexBasis: '48%', borderWidth: 1, borderColor: '#e5e7eb', shadowColor: '#000', shadowOpacity: 0.04, shadowOffset: { width: 0, height: 2 }, shadowRadius: 4, elevation: 1 },
+  tileIconCircle: { width: 56, height: 56, borderRadius: 28, backgroundColor: '#01559d', alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
+  tileIcon: { fontSize: 24, color: '#ffffff' },
+  tileLabel: { fontWeight: '600', color: '#01559d', fontSize: 13 },
 });

@@ -1,6 +1,6 @@
-import React, { useMemo, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, FlatList } from 'react-native';
-import { getProducts, getSchedule, saveSchedule, Product, Schedule, ScheduleLine } from '@/services/localData';
+import { getProducts, getSchedule, Product, saveSchedule, Schedule, ScheduleLine } from '@/services/localData';
+import { useMemo, useState } from 'react';
+import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function PlanScreen() {
   const products = useMemo<Product[]>(() => getProducts(), []);
@@ -105,27 +105,27 @@ export default function PlanScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, backgroundColor: '#fff' },
-  title: { fontSize: 20, fontWeight: '700', color: '#2e7d32', marginBottom: 12 },
-  subTitle: { fontSize: 16, fontWeight: '700', color: '#2e7d32', marginTop: 8, marginBottom: 6 },
-  card: { backgroundColor: '#fff', borderWidth: 1, borderColor: 'rgb(144, 238, 144)', borderRadius: 12, padding: 12, marginBottom: 10 },
-  productName: { fontWeight: '700', marginBottom: 8, color: '#1b5e20' },
+  container: { flex: 1, padding: 16, backgroundColor: '#ffffff' },
+  title: { fontSize: 20, fontWeight: '700', color: '#01559d', marginBottom: 12 },
+  subTitle: { fontSize: 16, fontWeight: '700', color: '#01559d', marginTop: 8, marginBottom: 6 },
+  card: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#bebebe', borderRadius: 12, padding: 12, marginBottom: 10 },
+  productName: { fontWeight: '700', marginBottom: 8, color: '#01559d' },
   row: { flexDirection: 'row', gap: 12 },
   col: { flex: 1 },
   label: { fontSize: 12, color: '#4f4f4f', marginBottom: 6 },
   stepperRow: { flexDirection: 'row', alignItems: 'center' },
-  stepperBtn: { width: 36, height: 36, borderRadius: 8, backgroundColor: 'rgb(144, 238, 144)', alignItems: 'center', justifyContent: 'center' },
+  stepperBtn: { width: 36, height: 36, borderRadius: 8, backgroundColor: '#01559d', alignItems: 'center', justifyContent: 'center' },
   stepperText: { color: '#fff', fontSize: 18, fontWeight: '700' },
-  input: { flex: 1, marginHorizontal: 8, borderWidth: 1, borderColor: '#c8e6c9', borderRadius: 10, paddingVertical: 8, paddingHorizontal: 10, backgroundColor: '#f9fff9', color: '#1b5e20', textAlign: 'center' },
-  saveBtn: { backgroundColor: '#2e7d32', borderRadius: 12, padding: 14, alignItems: 'center', marginTop: 8 },
+  input: { flex: 1, marginHorizontal: 8, borderWidth: 1, borderColor: '#bebebe', borderRadius: 10, paddingVertical: 8, paddingHorizontal: 10, backgroundColor: '#ffffff', color: '#01559d', textAlign: 'center' },
+  saveBtn: { backgroundColor: '#01559d', borderRadius: 12, padding: 14, alignItems: 'center', marginTop: 8 },
   saveText: { color: '#fff', fontWeight: '700' },
-  savedHint: { textAlign: 'center', color: '#2e7d32', marginTop: 8 },
+  savedHint: { textAlign: 'center', color: '#01559d', marginTop: 8 },
   pauseRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
-  pauseLabel: { color: '#1b5e20', fontWeight: '700' },
-  pauseBtn: { paddingVertical: 8, paddingHorizontal: 14, borderRadius: 18, borderWidth: 1, borderColor: '#c8e6c9' },
+  pauseLabel: { color: '#01559d', fontWeight: '700' },
+  pauseBtn: { paddingVertical: 8, paddingHorizontal: 14, borderRadius: 18, borderWidth: 1, borderColor: '#bebebe' },
   pauseBtnActive: { backgroundColor: '#ffb300', borderColor: '#ffb300' },
-  pauseText: { color: '#1b5e20', fontWeight: '700' },
+  pauseText: { color: '#01559d', fontWeight: '700' },
   pauseTextActive: { color: '#fff' },
-  skipBox: { backgroundColor: '#e8f5e9', borderColor: '#c8e6c9', borderWidth: 1, borderRadius: 10, padding: 10 },
-  skipHint: { color: '#1b5e20' },
+  skipBox: { backgroundColor: '#ffffff', borderColor: '#bebebe', borderWidth: 1, borderRadius: 10, padding: 10 },
+  skipHint: { color: '#01559d' },
 });

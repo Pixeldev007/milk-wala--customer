@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, FlatList } from 'react-native';
-import { getProducts, getSchedule, getToday, setOverride, Product } from '@/services/localData';
+import { getProducts, getSchedule, getToday, Product, setOverride } from '@/services/localData';
+import { useEffect, useMemo, useState } from 'react';
+import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
  type Row = {
   product: Product;
@@ -148,24 +148,24 @@ export default function TodayScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, backgroundColor: '#fff' },
-  title: { fontSize: 20, fontWeight: '700', color: '#2e7d32', marginBottom: 12 },
-  dateBadge: { alignSelf: 'flex-start', backgroundColor: '#e8f5e9', color: '#1b5e20', borderColor: '#c8e6c9', borderWidth: 1, borderRadius: 8, paddingVertical: 6, paddingHorizontal: 10, marginBottom: 10 },
-  card: { backgroundColor: '#fff', borderWidth: 1, borderColor: 'rgb(144, 238, 144)', borderRadius: 12, padding: 12, marginBottom: 10 },
-  productName: { fontWeight: '700', marginBottom: 8, color: '#1b5e20' },
+  container: { flex: 1, padding: 16, backgroundColor: '#ffffff' },
+  title: { fontSize: 20, fontWeight: '700', color: '#01559d', marginBottom: 12 },
+  dateBadge: { alignSelf: 'flex-start', backgroundColor: '#ffffff', color: '#01559d', borderColor: '#bebebe', borderWidth: 1, borderRadius: 8, paddingVertical: 6, paddingHorizontal: 10, marginBottom: 10 },
+  card: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#bebebe', borderRadius: 12, padding: 12, marginBottom: 10 },
+  productName: { fontWeight: '700', marginBottom: 8, color: '#01559d' },
   row: { flexDirection: 'row', gap: 12 },
   col: { flex: 1 },
   label: { fontSize: 12, color: '#4f4f4f', marginBottom: 6 },
-  input: { borderWidth: 1, borderColor: '#c8e6c9', borderRadius: 10, paddingVertical: 8, paddingHorizontal: 10, backgroundColor: '#f9fff9', color: '#1b5e20', textAlign: 'center' },
+  input: { borderWidth: 1, borderColor: '#bebebe', borderRadius: 10, paddingVertical: 8, paddingHorizontal: 10, backgroundColor: '#ffffff', color: '#01559d', textAlign: 'center' },
   actionsRow: { flexDirection: 'row', gap: 8, marginTop: 10 },
   btn: { flex: 1, paddingVertical: 10, borderRadius: 10, alignItems: 'center' },
   skipBtn: { backgroundColor: '#ffb300' },
-  saveBtn: { backgroundColor: '#2e7d32' },
-  resetBtn: { backgroundColor: 'rgb(144, 238, 144)' },
+  saveBtn: { backgroundColor: '#01559d' },
+  resetBtn: { backgroundColor: '#01559d' },
   btnText: { color: '#fff', fontWeight: '700' },
-  savedHint: { marginTop: 6, color: '#2e7d32' },
-  historyTitle: { marginTop: 8, marginBottom: 6, fontWeight: '700', color: '#2e7d32' },
+  savedHint: { marginTop: 6, color: '#01559d' },
+  historyTitle: { marginTop: 8, marginBottom: 6, fontWeight: '700', color: '#01559d' },
   historyRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 8, borderBottomWidth: 1, borderBottomColor: '#eee' },
   historyDate: { color: '#4f4f4f' },
-  historyValue: { color: '#1b5e20', fontWeight: '700' },
+  historyValue: { color: '#01559d', fontWeight: '700' },
 });

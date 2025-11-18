@@ -30,7 +30,7 @@ export default function CustomDrawerContent(props: DrawerContentComponentProps) 
     .map(w => w[0]?.toUpperCase())
     .join('') || 'CU';
   return (
-    <DrawerContentScrollView {...props} contentContainerStyle={{flex: 1, backgroundColor: '#fff'}}>
+    <DrawerContentScrollView {...props} contentContainerStyle={{flex: 1, backgroundColor: '#ffffff'}}>
       {/* User Info */}
       <View style={styles.userInfo}>
         <View style={styles.avatar}><Text style={styles.avatarText}>{initials}</Text></View>
@@ -44,42 +44,42 @@ export default function CustomDrawerContent(props: DrawerContentComponentProps) 
       <View style={{flex: 1}}>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Dashboard" style={[styles.menuItem]} onPress={() => navigation.navigate('Dashboard')}>
           <View style={styles.menuLeft}>
-            <AntDesign name="home" color="rgb(76, 175, 80)" size={20} style={styles.menuIcon} />
+            <AntDesign name="home" color="#01559d" size={20} style={styles.menuIcon} />
             <Text style={styles.menuText}>Dashboard</Text>
           </View>
-          <Feather name="chevron-right" size={20} color="rgb(76, 175, 80)" />
+          <Feather name="chevron-right" size={20} color="#01559d" />
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="My Orders" style={[styles.menuItem]} onPress={() => navigation.navigate('My Orders')}>
           <View style={styles.menuLeft}>
-            <Feather name="list" color="rgb(76, 175, 80)" size={20} style={styles.menuIcon} />
+            <Feather name="list" color="#01559d" size={20} style={styles.menuIcon} />
             <Text style={styles.menuText}>My Orders</Text>
           </View>
-          <Feather name="chevron-right" size={20} color="rgb(76, 175, 80)" />
+          <Feather name="chevron-right" size={20} color="#01559d" />
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Transactions" style={[styles.menuItem]} onPress={() => navigation.navigate('Transactions')}>
           <View style={styles.menuLeft}>
-            <Feather name="credit-card" color="rgb(76, 175, 80)" size={20} style={styles.menuIcon} />
+            <Feather name="credit-card" color="#01559d" size={20} style={styles.menuIcon} />
             <Text style={styles.menuText}>Transactions</Text>
           </View>
           <Feather name="chevron-right" size={20} color="rgb(76, 175, 80)" />
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Payments" style={[styles.menuItem]} onPress={() => navigation.navigate('Payment')}>
           <View style={styles.menuLeft}>
-            <Feather name="dollar-sign" color="rgb(76, 175, 80)" size={20} style={styles.menuIcon} />
+            <Feather name="dollar-sign" color="#01559d" size={20} style={styles.menuIcon} />
             <Text style={styles.menuText}>Payments</Text>
           </View>
           <Feather name="chevron-right" size={20} color="rgb(76, 175, 80)" />
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Rate Us" style={[styles.menuItem]} onPress={() => Linking.openURL('market://details?id=com.milkkarancustomer')}>
           <View style={styles.menuLeft}>
-            <Feather name="star" color="rgb(76, 175, 80)" size={20} style={styles.menuIcon} />
+            <Feather name="star" color="#01559d" size={20} style={styles.menuIcon} />
             <Text style={styles.menuText}>Rate Us</Text>
           </View>
           <Feather name="chevron-right" size={20} color="rgb(76, 175, 80)" />
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Settings" style={[styles.menuItem]} onPress={() => navigation.navigate('Settings')}>
           <View style={styles.menuLeft}>
-            <Feather name="settings" color="rgb(76, 175, 80)" size={20} style={styles.menuIcon} />
+            <Feather name="settings" color="#01559d" size={20} style={styles.menuIcon} />
             <Text style={styles.menuText}>Settings</Text>
           </View>
           <Feather name="chevron-right" size={20} color="rgb(76, 175, 80)" />
@@ -88,7 +88,7 @@ export default function CustomDrawerContent(props: DrawerContentComponentProps) 
           navigation.reset({ index: 0, routes: [{ name: 'Login' }] });
         }}>
           <View style={styles.menuLeft}>
-            <Feather name="log-out" color="rgb(76, 175, 80)" size={20} style={styles.menuIcon} />
+            <Feather name="log-out" color="#01559d" size={20} style={styles.menuIcon} />
             <Text style={styles.menuText}>Logout</Text>
           </View>
           <Feather name="chevron-right" size={20} color="rgb(76, 175, 80)" />
@@ -115,8 +115,8 @@ export default function CustomDrawerContent(props: DrawerContentComponentProps) 
 }
 
 const styles = StyleSheet.create({
-  userInfo: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgb(144, 238, 144)', padding: 16, borderTopLeftRadius: 8, borderTopRightRadius: 8 },
-  avatar: { width: 48, height: 48, borderRadius: 24, backgroundColor: 'rgb(144, 238, 144)', alignItems: 'center', justifyContent: 'center' },
+  userInfo: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#01559d', padding: 16, borderTopLeftRadius: 8, borderTopRightRadius: 8 },
+  avatar: { width: 48, height: 48, borderRadius: 24, backgroundColor: '#01559d', alignItems: 'center', justifyContent: 'center' },
   avatarText: { fontWeight: 'bold', fontSize: 18, color: '#fff' },
   userName: { fontWeight: 'bold', fontSize: 15, color: '#222' },
   userPhone: { color: '#222', fontSize: 13 },
@@ -126,9 +126,9 @@ const styles = StyleSheet.create({
   menuIcon: { fontSize: 18, marginRight: 12 },
   menuText: { fontSize: 15, color: '#222', fontWeight: '600' },
   bottomSection: { marginTop: 30, alignItems: 'center', backgroundColor: 'transparent' },
-  langBtn: { backgroundColor: 'rgb(144, 238, 144)', borderRadius: 20, padding: 7, borderColor: '#fff', borderWidth: 1 },
+  langBtn: { backgroundColor: '#01559d', borderRadius: 20, padding: 7, borderColor: '#ffffff', borderWidth: 1 },
   langIcon: { fontSize: 18, color: '#fff' },
   langText: { marginTop: 6, marginBottom: 14, color: '#222' },
   socialRow: { flexDirection: 'row', justifyContent: 'center', gap: 10 },
-  socialBtn: { backgroundColor: 'rgb(144, 238, 144)', borderRadius: 20, padding: 10, marginHorizontal: 4 },
+  socialBtn: { backgroundColor: '#01559d', borderRadius: 20, padding: 10, marginHorizontal: 4 },
 });
