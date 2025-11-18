@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
-import { Feather, AntDesign } from '@expo/vector-icons';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { getCustomerSession } from '@/lib/session';
+import { AntDesign, Feather } from '@expo/vector-icons';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { DrawerContentScrollView } from '@react-navigation/drawer';
+import { useEffect, useState } from 'react';
+import { Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { DrawerContentComponentProps } from '@react-navigation/drawer';
 export default function CustomDrawerContent(props: DrawerContentComponentProps) {
@@ -70,7 +70,7 @@ export default function CustomDrawerContent(props: DrawerContentComponentProps) 
           </View>
           <Feather name="chevron-right" size={20} color="rgb(76, 175, 80)" />
         </TouchableOpacity>
-        <TouchableOpacity accessibilityRole="button" accessibilityLabel="Rate Us" style={[styles.menuItem]} onPress={() => Linking.openURL('market://details?id=com.milkwalacustomer')}>
+        <TouchableOpacity accessibilityRole="button" accessibilityLabel="Rate Us" style={[styles.menuItem]} onPress={() => Linking.openURL('market://details?id=com.milkkarancustomer')}>
           <View style={styles.menuLeft}>
             <Feather name="star" color="rgb(76, 175, 80)" size={20} style={styles.menuIcon} />
             <Text style={styles.menuText}>Rate Us</Text>

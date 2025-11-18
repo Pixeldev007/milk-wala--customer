@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { supabase } from '@/lib/supabase';
 import { setCustomerSession } from '@/lib/session';
+import { supabase } from '@/lib/supabase';
+import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
+import { Alert, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function Login() {
   const navigation = useNavigation<any>();
@@ -82,7 +82,7 @@ export default function Login() {
           <Text style={styles.signInText}>{loading ? 'Signing In...' : 'Sign In'}</Text>
         </TouchableOpacity>
 
-        <Text style={styles.footerText}>New to Milk Wala? <Text style={styles.footerLink}>Create an account</Text></Text>
+        <Text style={styles.footerText}>New to Milk-Karan-Customer? <Text style={styles.footerLink}>Create an account</Text></Text>
       </View>
     </KeyboardAvoidingView>
   );

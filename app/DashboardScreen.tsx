@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { View, Text, ActivityIndicator, RefreshControl, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { ActivityIndicator, RefreshControl, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { getCustomerSession } from '@/lib/session';
 import { getCustomerId } from '@/lib/customers';
+import { getCustomerSession } from '@/lib/session';
 import { supabase } from '@/lib/supabase';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
@@ -156,7 +156,7 @@ export default function DashboardScreen() {
         <View style={styles.headerCard}>
           <View style={styles.headerTopRow}>
             <Text style={styles.menuIcon}>☰</Text>
-            <Text style={styles.appTitle}>Milk Wala</Text>
+            <Text style={styles.appTitle}>Milk-Karan-Customer</Text>
             <View style={{ width: 24 }} />
           </View>
           <View style={styles.calendarRow}>
